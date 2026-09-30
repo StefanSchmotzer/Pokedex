@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/assets/icons/Favicon.png">
+    <link id="favicon" rel="icon" href="/assets/icons/alternate-favicon2.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/font.css">
-    <title >Stefans Pokédex</title>
+    <script>
+  const fronttitle = "--||Stefans Pokédex - Welcome! Enjoy and have Fun! ||--";
+  let position = 0;
+
+  setInterval(() => {
+    document.title =
+      fronttitle.substring(position) + fronttitle.substring(0, position);
+
+    position = (position + 1) % fronttitle.length;
+  }, 200);
+</script>
+
 </head>
-<body>
-    <p class="pagetitle">Pokédex</p>
+<body onload="init()">
     <h1 class="title1">Pokédex</h1>
 </body>
 </html>
