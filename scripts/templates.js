@@ -3,10 +3,10 @@ function templatePokemonCard (pokeID, name) {
         <li data-id="card"
             class="pokemon-card">
             <div class="card-header">
-            <h2 data-id="card-pokemon-name">${name}</h2>
-            <span data-id="pokemon-id">ID: ${pokeID}</span>
+                <h2 data-id="card-pokemon-name">${name}</h2>
+                <span data-id="pokemon-id">ID: ${pokeID}</span>
             </div>
-            <button data-id="card-image" id="#Image${pokeID}" onclick="showDialog(${pokeID})"></button>
+                <button data-id="card-image" id="#Image${pokeID}" onclick="showDialog(${pokeID})"></button>
             <div data-id="card-pokemon-types" id="#Types${pokeID}"></div>
         </li>`
 }
@@ -52,14 +52,14 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
             <span data-id="pokemon-id">#${pokeID}</span>
             <button data-id="close-dialog-button"
                 onclick="closeDialog()"
-                class="btn-icon">
-                <img src="./assets/icons/close.png" 
+                class="btn-icon2">
+                <img class="inner-btn" src="./assets/icons/close.png" 
                 alt="close overlay">
             </button>
         </header>
         <img id="#LoadingSpinnerOverlay"
             class="d-none"
-            src="./assets/icons/pokeball-closed.svg" 
+            src="./assets/icons/pokeball-pokemon.svg" 
             alt="Poké Ball"> 
         <section>
             <h3 data-id="overlay-pokemon-name" class="border-big">${name}</h3>
@@ -71,7 +71,7 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                 </div>
                 <div class="pokemon-details-container-child-img">
                     <img data-id="dialog-image"
-                        style="filter: drop-shadow(-12px 12px 12px var(--${type1})) drop-shadow(12px -12px 12px var(--${type2}))"
+                        style="filter: drop-shadow(-12px 12px 16px var(--${type1})) drop-shadow(12px -12px 16px var(--${type2}))"
                         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeID}.png" 
                         alt="${name}">
                     <div data-id="overlay-pokemon-types-mobile" class="show-mobile" id="#TypesOverlayMobile${pokeID}"></div>
@@ -94,8 +94,8 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                 <button data-id="prev-button"
                     onclick="renderPreviousOrNextPokemonOverlay(${pokeID}, 'previous')"
                     id="#ButtonPreviousPokemon"
-                    class="btn-icon btn-reverse">
-                    <img src="./assets/icons/arrow-left.png" 
+                    class="btn-icon2 btn-reverse">
+                    <img class="inner-btn" src="./assets/icons/arrow-left.png" 
                     alt="previous Pokémon">
                 </button>
                 <div>
@@ -104,8 +104,8 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                 <button data-id="next-button"
                     onclick="renderPreviousOrNextPokemonOverlay(${pokeID}, 'next')"
                     id="#ButtonNextPokemon"
-                    class="btn-icon">
-                    <img src="./assets/icons/arrow-right.png" 
+                    class="btn-icon2">
+                    <img class="inner-btn" src="./assets/icons/arrow-right.png" 
                     alt="next Pokémon">
                 </button>
             </div>

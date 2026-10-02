@@ -41,15 +41,15 @@ h4 {
 
 .border-big {
     background-color: var(--color-dark);
-    border: 1px solid var(--color-light);
-    border-radius: var(--border-radius-big);
+    border: 8px groove var(--color-dark);
+    border-radius: 0 0 16px 16px;
     filter: drop-shadow(var(--shadow));
 }
 
 /* body */
 
 body {
-    background-color: var(--color-dark);
+    background-image: url(assets/imgs/background-image.avif);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -123,7 +123,18 @@ main {
     width: 250px;
 }
 
+.card-header {
+    Display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5px;
+    background-color: rgb(182, 140, 1);
+    border-style: groove;
+    border-radius: 12px 12px 0px 0px;
+}
+
 .pokemon-card > button > img {
+    border-style: groove;
     border-radius: 0px 0px 16px 16px ;
     padding: 16px;
     width: 100%;
@@ -133,7 +144,8 @@ main {
     display:flex;
     justify-content: center;
     margin-top: 16px;
-    color: currentColor;    
+    color: rgb(0, 41, 0);
+    text-shadow: 1px 1px 2px #000000;    
     border-style: groove;
     border-radius: 32px 10px;
     padding: 2px 16px 4px;
