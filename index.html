@@ -6,20 +6,61 @@
     <link id="favicon" rel="icon" href="/assets/icons/alternate-favicon2.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/font.css">
-    <script>
-  const fronttitle = "--||Stefans Pokédex - Welcome! Enjoy and have Fun! ||--";
-  let position = 0;
-
-  setInterval(() => {
-    document.title =
-      fronttitle.substring(position) + fronttitle.substring(0, position);
-
-    position = (position + 1) % fronttitle.length;
-  }, 200);
-</script>
-
+    <link rel="stylesheet" href="styles/assets.css">
+    <link rel="stylesheet" href="styles/standard.css">
+    <title>Stefans Pokédex</title>
+    <script src="./scripts/templates.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body onload="init()">
-    <h1 class="title1">Pokédex</h1>
+    <header class="wrapper border-big fixed-header">
+            <div>
+                <img src="./assets/icons/favicon.png" alt="Poké Ball">
+                <span>Stefans Pokédex</span>
+            </div>
+            <div>
+                <label for="#Search">Pokésearch:</label>
+                <input data-id="search-input" 
+                    id="#Search" class="input-search" 
+                    type="search" name="search" 
+                    minlength="3" placeholder="min 3 lts" required
+                    onkeyup="pressEnter(event, 'search')">
+                <button data-id="search-button"
+                    onclick="checkSearchInput()"
+                    type="submit" class="btn-icon">
+                    <img class="btn-icon" src="./assets/icons/pokéball-real.png" 
+                        alt="search for Pokémon">
+                </button>
+            </div>
+    </header>
+     <main data-id="content" id="#PageStart" class="wrapper">
+        <img id="#LoadingSpinner"
+            class="d-none"
+            src="./assets/icons/alternate-favicon.png" 
+            alt="Poké Ball">      
+        <h1>Pokédex</h1>
+        <ol id="#PokemonList"
+            class="container-pokemon-cards d-none">
+        </ol>
+        <div id="#NoPokemonsFound"></div>
+        <div id="#LoadMoreButton"
+            class="container-load-more-button">
+        </div>
+
+        <dialog data-id="dialog" id="#Dialog" closedby="any">
+            <div data-id="overlay-pokemon"
+                id="#PokemonOverlay"
+                class="pokemon-overlay">
+            </div>
+        </dialog>
+        
+    </main>
+    <footer class="wrapper border-big">
+        <a href="##PageStart">
+            <img onclick="showAllLoadedPokemon()"
+                src="./assets/icons/favicon.png" 
+                alt="to the start of the page">
+        </a>
+    </footer>
 </body>
 </html>
