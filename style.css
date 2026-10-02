@@ -130,8 +130,12 @@ main {
 }
 
 .span-type {
-    color: var(--color-dark);
-    border-radius: var(--border-radius-small);
+    display:flex;
+    justify-content: center;
+    margin-top: 16px;
+    color: currentColor;    
+    border-style: groove;
+    border-radius: 32px 10px;
     padding: 2px 16px 4px;
 }
 

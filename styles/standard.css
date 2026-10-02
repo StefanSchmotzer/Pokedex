@@ -1,0 +1,66 @@
+:root {
+    --color-dark: rgb(63, 73, 72);
+    --color-light: rgb(0, 255, 98);
+    --color-font: rgba(255, 255, 255, 1);
+    --shadow: 0px 0px 8px var(--color-light);
+    --shadow-big: 0px 0px 12px var(--color-light);
+    --border-radius-small: 12px 12px 12px 12px;
+    --border-radius-small-reverse: 24px 8px;
+    --border-radius-big: 0px 0px 48px 48px;
+
+    /* pokemon types_: */
+    --normal: rgb(240, 240, 188);
+    --fire: rgb(255, 0, 0);
+    --water: rgb(0, 128, 255);
+    --electric: rgb(255, 212, 81);
+    --grass: rgb(72, 255, 0);
+    --ice: rgb(169, 242, 255);
+    --fighting: rgb(197, 110, 96);
+    --poison: rgb(255, 0, 204);
+    --ground: rgb(139, 105, 0);
+    --flying: rgb(3, 255, 255);
+    --psychic: rgb(132, 0, 255);
+    --bug: rgb(183, 197, 67);
+    --rock: rgb(94, 92, 86);
+    --ghost: rgb(125, 125, 197);
+    --dragon: rgb(46, 45, 54);
+    --dark: rgb(139, 110, 96);
+    --steel: rgb(183, 183, 197);
+    --fairy: rgb(241, 168, 241);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}                   
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+.wrapper {
+    padding: 0 max(5%, calc((100% - 1440px) / 2));
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+dialog {
+    background-color: transparent;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    width: min(100%, 900px);
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
