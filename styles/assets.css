@@ -4,7 +4,7 @@
     top: calc(60px + (100vh - 30vh - 60px) / 2);
     height: 200vh;
     z-index: 20;
-    animation: loadingSpinner 10s linear infinite;
+    animation: loadingSpinner 2.5s linear infinite;
 }
 
 @keyframes loadingSpinner {
@@ -43,7 +43,7 @@ input {
 }
 
 .input-search {
-    width: 100px;
+    width: 92px;
 }
 
 button {
@@ -106,7 +106,6 @@ a:hover,
 a:focus-visible,
 button:hover, 
 button:focus-visible,
-.card-header:hover,
 .pokemon-card:hover,
 .pokemon-card:focus-visible,
 .pokemon-card > button > img:hover,

@@ -60,12 +60,11 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
             src="./assets/icons/pokeball-pokemon.svg" 
             alt="Poké Ball"> 
         <section>
-            
             <div class="pokemon-details-container-parent">
                 <div data-id="pokemon-data-1-desktop" class="hide-mobile pokemon-details-container-child">
+                    <p data-id="pokemon-hp" class="border-big"><img class="btn-icon2" src="./assets/icons/health.png" alt="health"><br><b>${hp}</b></p>
                     <p data-id="pokemon-height" class="border-big"><img class="btn-icon2"  src="./assets/icons/lineal.png" alt="height"><br><b>${height}</b></p>
                     <p data-id="pokemon-weight" class="border-big"><img class="btn-icon2" src="./assets/icons/weight.png" alt="weight"><br><b>${weight}</b></p>
-                    <div data-id="overlay-pokemon-types" id="#TypesOverlay${pokeID}"></div>
                 </div>
                 <div class="pokemon-details-container-child-img">
                     <img data-id="dialog-image"
@@ -75,11 +74,12 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                     <div data-id="overlay-pokemon-types-mobile" class="show-mobile" id="#TypesOverlayMobile${pokeID}"></div>
                 </div>
                 <div data-id="pokemon-data-2-desktop" class="hide-mobile pokemon-details-container-child">
-                    <p data-id="pokemon-hp" class="border-big"><img class="btn-icon2" src="./assets/icons/health.png" alt="health"><br><b>${hp}</b></p>
-                    <p data-id="pokemon-attack" class="border-big"><img class="btn-icon2" src="./assets/icons/attack.png" alt="attack"><br><b>${attack}</b></p>
-                    <p data-id="pokemon-defense" class="border-big"><img class="btn-icon2" src="./assets/icons/defense.png" alt="defense"><br><b>${defense}</b></p>
+                    
+                    <p data-id="pokemon-attack" class="border-big-reverse"><img class="btn-icon2" src="./assets/icons/attack.png" alt="attack"><br><b>${attack}</b></p>
+                    <div data-id="overlay-pokemon-types" id="#TypesOverlay${pokeID}"></div>
+                    <p data-id="pokemon-defense" class="border-big-reverse"><img class="btn-icon2" src="./assets/icons/defense.png" alt="defense"><br><b>${defense}</b></p>
                 </div>
-                <div data-id="pokemon-data-mobile" class="show-mobile pokemon-details-container-child border-big">
+                <div data-id="pokemon-data-mobile" class="show-mobile pokemon-details-container-child border-big-reverse">
                     <p data-id="pokemon-height">height:<br><b>${height}</b></p>
                     <p data-id="pokemon-weight">weight:<br><b>${weight}</b></p>
                     <p data-id="pokemon-hp">hp:<br><b>${hp}</b></p>
@@ -97,7 +97,7 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                     alt="previous Pokémon">
                 </button>
                 <div>
-                    <h4 class="border-big">Evolution Chain</h4>
+                    <h4 class="border-evolution">Evolution Chain</h4>
                 </div>
                 <button data-id="next-button"
                     onclick="renderPreviousOrNextPokemonOverlay(${pokeID}, 'next')"
