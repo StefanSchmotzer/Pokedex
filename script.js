@@ -32,7 +32,8 @@ async function init() {
 async function getPokemonsData(data, start, end) {
     for (let pokeID = start; (pokeID < (start + end)) && (pokeID <= MAX_AMOUNT); pokeID++) {
         if (data == "id") {
-            await getOnePokemonId(pokeID);}
+            await getOnePokemonId(pokeID);
+        }
         if (data == "name") {
             if (checkPokemonDataIsLoaded(data, pokeID) == false) {
                 await getOnePokemonName(pokeID);}
@@ -43,7 +44,6 @@ async function getPokemonsData(data, start, end) {
             }
     }
 }
-
 
 async function getOnePokemonId(pokeID) {
     pokemonDataFetched[pokeID] = await {};
@@ -97,7 +97,6 @@ async function renderOnePokemonCard(pokeID) {
     document.getElementById('#PokemonList').innerHTML += await templatePokemonCard(pokeID, name);
     document.getElementById(`#Image${pokeID}`).appendChild(pokeImage);
     await renderPokemonTypes(pokeID, types, '#Types');
-
     if (!renderedPokemons.includes(pokeID)) {
         await renderedPokemons.push(pokeID);}
 }

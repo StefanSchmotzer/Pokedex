@@ -20,7 +20,6 @@ function templatePokemonTypes(type) {
 
 function templateLoadMoreButton(loadingAmount) {
     return `
-
         <input data-id="load-more-input"
             id="#LoadingAmount" class="input-loading-amount" 
             type="number" name="loading amount" 
@@ -74,7 +73,6 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                     <div data-id="overlay-pokemon-types-mobile" class="show-mobile" id="#TypesOverlayMobile${pokeID}"></div>
                 </div>
                 <div data-id="pokemon-data-2-desktop" class="hide-mobile pokemon-details-container-child">
-                    
                     <p data-id="pokemon-attack" class="border-big-reverse"><img class="btn-icon2" src="./assets/icons/attack.png" alt="attack"><br><b>${attack}</b></p>
                     <div data-id="overlay-pokemon-types" id="#TypesOverlay${pokeID}"></div>
                     <p data-id="pokemon-defense" class="border-big-reverse"><img class="btn-icon2" src="./assets/icons/defense.png" alt="defense"><br><b>${defense}</b></p>
@@ -86,8 +84,7 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                     <p data-id="pokemon-attack">attack:<br><b>${attack}</b></p>
                     <p data-id="pokemon-defense">defense:<br><b>${defense}</b></p>                   
                 </div>
-            </div>
-            
+            </div>    
             <div class="overlay-arrow-container">
                 <button data-id="prev-button"
                     onclick="renderPreviousOrNextPokemonOverlay(${pokeID}, 'previous')"

@@ -96,8 +96,6 @@ button {
     width: fit-content;
 }
 
-/* focus and hover */
-
 :focus-visible {
     outline: none;
 }
