@@ -1,4 +1,4 @@
-function templatePokemonCard (pokeID, name) {
+function templatePokemonCard(pokeID, name) {
     return `
         <li data-id="card"
             class="pokemon-card">
@@ -20,11 +20,7 @@ function templatePokemonTypes(type) {
 
 function templateLoadMoreButton(loadingAmount) {
     return `
-        <button data-id="load-more-button" 
-            onclick="loadMorePokemon()"
-            class="btn-load-more">
-            Load
-        </button>
+
         <input data-id="load-more-input"
             id="#LoadingAmount" class="input-loading-amount" 
             type="number" name="loading amount" 
@@ -33,7 +29,7 @@ function templateLoadMoreButton(loadingAmount) {
         <button data-id="load-more-button"
             onclick="loadMorePokemon()"
             class="btn-load-more">
-            more
+            load more
         </button>`
 }
 
@@ -48,9 +44,11 @@ function templateShowAllLoadedPokemonButton() {
 
 function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, attack, defense) {
     return `
-        <header class="overlay-header">
-            <span data-id="pokemon-id">#${pokeID}</span>
-            <button data-id="close-dialog-button"
+        <header class="overlay-header card-header">
+            <span data-id="pokemon-id">ID ${pokeID}</span>
+                    <h3 data-id="overlay-pokemon-name"> ${name}
+                    </h3>
+             <button data-id="close-dialog-button"
                 onclick="closeDialog()"
                 class="btn-icon2">
                 <img class="inner-btn" src="./assets/icons/close.png" 
@@ -62,12 +60,12 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
             src="./assets/icons/pokeball-pokemon.svg" 
             alt="Poké Ball"> 
         <section>
-            <h3 data-id="overlay-pokemon-name" class="border-big">${name}</h3>
+            
             <div class="pokemon-details-container-parent">
                 <div data-id="pokemon-data-1-desktop" class="hide-mobile pokemon-details-container-child">
-                    <p data-id="pokemon-height" class="border-big">height:<br><b>${height}</b></p>
+                    <p data-id="pokemon-height" class="border-big"><img class="btn-icon2"  src="./assets/icons/lineal.png" alt="height"><br><b>${height}</b></p>
+                    <p data-id="pokemon-weight" class="border-big"><img class="btn-icon2" src="./assets/icons/weight.png" alt="weight"><br><b>${weight}</b></p>
                     <div data-id="overlay-pokemon-types" id="#TypesOverlay${pokeID}"></div>
-                    <p data-id="pokemon-weight" class="border-big">weight:<br><b>${weight}</b></p>
                 </div>
                 <div class="pokemon-details-container-child-img">
                     <img data-id="dialog-image"
@@ -77,9 +75,9 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                     <div data-id="overlay-pokemon-types-mobile" class="show-mobile" id="#TypesOverlayMobile${pokeID}"></div>
                 </div>
                 <div data-id="pokemon-data-2-desktop" class="hide-mobile pokemon-details-container-child">
-                    <p data-id="pokemon-hp" class="border-big">hp:<br><b>${hp}</b></p>
-                    <p data-id="pokemon-attack" class="border-big">attack:<br><b>${attack}</b></p>
-                    <p data-id="pokemon-defense" class="border-big">defense:<br><b>${defense}</b></p>
+                    <p data-id="pokemon-hp" class="border-big"><img class="btn-icon2" src="./assets/icons/health.png" alt="health"><br><b>${hp}</b></p>
+                    <p data-id="pokemon-attack" class="border-big"><img class="btn-icon2" src="./assets/icons/attack.png" alt="attack"><br><b>${attack}</b></p>
+                    <p data-id="pokemon-defense" class="border-big"><img class="btn-icon2" src="./assets/icons/defense.png" alt="defense"><br><b>${defense}</b></p>
                 </div>
                 <div data-id="pokemon-data-mobile" class="show-mobile pokemon-details-container-child border-big">
                     <p data-id="pokemon-height">height:<br><b>${height}</b></p>

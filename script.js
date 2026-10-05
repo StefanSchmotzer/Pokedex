@@ -10,7 +10,7 @@
 
 const BASE_URL = "https://pokeapi.co/api/v2";
 const MAX_AMOUNT = 1025;
-let loadingAmount = 20;
+let loadingAmount = 25;
 const pokemonDataFetched = {};
 const pokemonImageCache = {};
 const renderedPokemons = [];
@@ -154,10 +154,10 @@ async function searchForPokemon(searchInput) {
             await searchedPokemons.push(pokeID);
         }
     };
-    (searchedPokemons.length > 0) ? await renderPokemonCards(searchedPokemons) : await renderMassageNoPokemonsFound(searchInput);
+    (searchedPokemons.length > 0) ? await renderPokemonCards(searchedPokemons) : await renderMessageNoPokemonsFound(searchInput);
 }
 
-function renderMassageNoPokemonsFound(searchInput) {
+function renderMessageNoPokemonsFound(searchInput) {
     document.getElementById('#NoPokemonsFound').innerHTML = `<p data-id="not-found">Sorry, there are no Pokémon with "${searchInput}"!</p>`;
 }
 

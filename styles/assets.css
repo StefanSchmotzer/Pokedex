@@ -2,8 +2,8 @@
     display: block;
     position: fixed;
     top: calc(60px + (100vh - 30vh - 60px) / 2);
-    height: 20vh;
-    z-index: 2;
+    height: 200vh;
+    z-index: 20;
     animation: loadingSpinner 10s linear infinite;
 }
 
@@ -34,11 +34,12 @@ input {
     background-color: var(--color-font);
     border: 1px solid var(--color-font);
     border-radius: var(--border-radius-small);
-    padding: 8px 0 8px 8px;
+    padding: 8px 8px 8px 8px;
 }
 
 .input-loading-amount {
     width: 60px;
+    color: var(--color-dark);
 }
 
 .input-search {
@@ -55,7 +56,8 @@ button {
 }
 
 .pokemon-card > button {
-    background-color: transparent;
+   background-color: transparent;
+
 }
 
 .btn-reverse {

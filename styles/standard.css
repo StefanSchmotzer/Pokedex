@@ -1,8 +1,8 @@
 :root {
-    --color-dark: rgb(63, 73, 72);
-    --color-light: rgb(255, 0, 255);
+    --color-dark: rgb(61, 80, 78);
+    --color-light: rgb(170, 209, 163);
     --color-font: rgba(255, 255, 255, 1);
-    --shadow: 0px 0px 16px red;
+    --shadow: 0px 0px 16px rgb(255, 255, 255);
     --shadow-big: 0px 0px 12px var(--color-light);
     --border-radius-small: 12px 12px 12px 12px;
     --border-radius-small-reverse: 24px 8px;
