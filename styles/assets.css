@@ -26,6 +26,7 @@ input {
 }
 
 .input-search {
+    color: var(--color-dark);
     width: 92px;
 }
 
