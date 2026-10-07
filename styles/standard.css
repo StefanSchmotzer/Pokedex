@@ -9,13 +9,13 @@
     --border-radius-big: 0px 0px 48px 48px;
 
     --normal: rgb(240, 240, 188);
-    --fire: rgb(255, 0, 0);
-    --water: rgb(0, 128, 255);
-    --electric: rgb(255, 212, 81);
-    --grass: rgb(72, 255, 0);
+    --fire: rgb(255, 72, 72);
+    --water: rgb(29, 122, 214);
+    --electric: rgb(255, 202, 41);
+    --grass: rgb(78, 209, 26);
     --ice: rgb(169, 242, 255);
     --fighting: rgb(197, 110, 96);
-    --poison: rgb(255, 0, 204);
+    --poison: rgb(255, 49, 214);
     --ground: rgb(139, 105, 0);
     --flying: rgb(3, 255, 255);
     --psychic: rgb(132, 0, 255);

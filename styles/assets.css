@@ -2,7 +2,8 @@
     display: block;
     position: fixed;
     top: calc(60px + (100vh - 30vh - 60px) / 2);
-    height: 200vh;
+    height: 200px;
+    left: 50%;
     z-index: 20;
     animation: loadingSpinner 2.5s linear infinite;
 }
@@ -33,7 +34,7 @@ input {
 button {
     display: flex;
     align-items: center;
-    background-color: rgb(12, 179, 201);
+    background-color: rgba(241, 49, 49, 0.911);
     border: groove;
     border-radius:0px 0px 16px 16px;
     cursor: pointer;
