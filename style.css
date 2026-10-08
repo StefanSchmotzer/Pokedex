@@ -10,21 +10,16 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-family: "Luckiest Guy", cursive;
-    color: #ffcb05;
-    -webkit-text-stroke: 4px #003cff;
-    text-shadow: 0px -4px 16px #4a76e6;
+    font-family: "Luckiest Guy";
+    color: rgb(255, 203, 5);
+    -webkit-text-stroke: 4px rgb(0, 60, 255);
+    text-shadow: 0px -4px 16px rgb(74, 118, 230);
     font-size: 3rem;
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 24px;
 }
 
-h2, h3 {
-    font-size: 1.5rem;
-    margin: 8px 0;
-}
-
-h3 {
+h2,h3 {
     justify-self: center;
     font-size: 1.5rem;
     padding: 8px 24px;
@@ -54,6 +49,10 @@ h4 {
     margin-bottom: 10px;
 }
 
+.border-mobile-evolution {
+    display: none;
+}
+
 .border-evolution {
     background-image:linear-gradient(to bottom left, rgb(255, 251, 18), rgb(255, 0, 0));
     border: 6px groove var(--color-font);
@@ -61,7 +60,7 @@ h4 {
 }
 
 body {
-    background-image:linear-gradient(135deg, rgba(255, 4, 4, 0.788) 2%, rgba(17, 0, 255, 0.747) 35%, rgba(238, 255, 0, 0.849) 100%);
+    background-image:linear-gradient(135deg, rgb(0, 0, 0) 2%, rgb(73, 73, 73) 35%, rgb(0, 0, 0) 100%);
     display: flex;
     flex-direction: column;
 }
@@ -72,11 +71,11 @@ body {
     left: 0;
     right: 0;
     z-index: 1;
-    height: 60px;
-    background-color: rgba(0, 5, 49, 0.781);
+    height: 100px;
+    background-color: rgb(0, 5, 49);
     border: 6px groove var(--color-font);
     border-radius:  0 0 40px 40px;
-    filter: drop-shadow(0px 2px 8px #020000);
+    filter: drop-shadow(0px 2px 8px rgb(0, 0, 0));
 }
 
 header {
@@ -117,7 +116,7 @@ footer > a {
     background-color: rgba(0, 5, 49, 0.781);
     border: 6px groove var(--color-font);
     border-radius: 64px 64px 0 0;
-    filter: drop-shadow(0px -2px 8px #020000);
+    filter: drop-shadow(0px -2px 8px rgb(0, 0, 0));
 }
 
 main {
@@ -131,7 +130,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
-    filter: drop-shadow(0px 0px 8px #020000);
+    filter: drop-shadow(0px 0px 8px rgb(0, 0, 0));
 }
 
 .pokemon-card {
@@ -141,7 +140,7 @@ main {
     aspect-ratio: 4 / 3;
     width: 250px;
     border-style: groove;
-    filter: drop-shadow(0px 0px 8px #020000);
+    filter: drop-shadow(0px 0px 8px rgb(0, 0, 0));
 }
 
 .card-header {
@@ -166,7 +165,7 @@ main {
     justify-content: center;
     margin-block: 8px;
     color: rgb(0, 41, 0);
-    text-shadow: 1px 1px 2px #000000;    
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);    
     border-style: groove;
     border-radius: 32px 10px;
     padding: 4px 16px;
@@ -177,13 +176,13 @@ main {
 }
 
 .pokemon-overlay {
-background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.623) 35%, rgb(231, 233, 216) 100%);
+    background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.623) 35%, rgb(231, 233, 216) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 8px groove var(--color-font);
     border-radius: var(--border-radius-small);
-    filter: drop-shadow(1px 1px 16px #020000);
+    filter: drop-shadow(1px 1px 16px rgb(0, 0, 0));
 }
 
 .overlay-header {
@@ -196,7 +195,7 @@ background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.62
     background-color: rgb(9, 81, 94);
     border-style: groove;
     border-radius: 12px 12px 0px 0px;
-    filter: drop-shadow(1px 1px 4px #020000);
+    filter: drop-shadow(1px 1px 4px rgb(0, 0, 0));
 }
 
 .overlay-header > span {
@@ -206,7 +205,7 @@ background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.62
 .pokemon-overlay > section {
     margin-bottom: 24px;
     width: 100%;
-    filter: drop-shadow(1px 1px 16px #020000);
+    filter: drop-shadow(1px 1px 16px rgb(0, 0, 0));
 }
 
 .pokemon-details-container-parent {
@@ -371,7 +370,7 @@ background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.62
 
 @media screen and (max-width: 480px) {
     .pokemon-details-container-parent {
-        height: 270px;
+        height: 400px;
     }
 
     .pokemon-details-container-child-img > img {
@@ -384,8 +383,19 @@ background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.62
         gap: 4px;
     }
 
+    .border-evolution {
+        display: none;
+    }
+
+    .border-mobile-evolution {
+        display:flex;
+        background-image:linear-gradient(to bottom left, rgb(255, 251, 18), rgb(255, 0, 0));
+        border: 2px solid var(--color-font);
+        border-radius: 4px;
+    }
+
     .evolution-chain {
-        padding: 0 8px;
+        padding: 0 2px;
     }
 
     .evolution-chain > li > h4 {
@@ -394,5 +404,11 @@ background-image:linear-gradient(315deg, rgb(3, 3, 3) 2%, rgba(89, 87, 110, 0.62
 
     .evolution-chain > li > img {
         width: 60%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .pokemon-details-container-parent {
+        height: 270px;
     }
 }

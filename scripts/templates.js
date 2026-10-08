@@ -6,8 +6,8 @@ function templatePokemonCard(pokeID, name) {
                 <h2 data-id="card-pokemon-name">${name}</h2>
                 <span data-id="pokemon-id">ID: ${pokeID}</span>
             </div>
-                <button data-id="card-image" id="#Image${pokeID}" onclick="showDialog(${pokeID})"></button>
-            <div data-id="card-pokemon-types" id="#Types${pokeID}"></div>
+                <button data-id="card-image" id="Image${pokeID}" onclick="showDialog(${pokeID})"></button>
+            <div data-id="card-pokemon-types" id="Types${pokeID}"></div>
         </li>`
 }
 
@@ -21,9 +21,11 @@ function templatePokemonTypes(type) {
 function templateLoadMoreButton(loadingAmount) {
     return `
         <input data-id="load-more-input"
-            id="#LoadingAmount" class="input-loading-amount" 
-            type="number" name="loading amount" 
+            id="LoadingAmount" class="input-loading-amount" 
+            type="number" min="20" max="40" step="1" name="loading amount" 
             value=${loadingAmount} required
+            oninput="if (this.value !== '' && this.value < 20) this.value = 20; 
+            else if (this.value > 40) this.value = 40"
             onkeyup="pressEnter(event, 'loadMore')">
         <button data-id="load-more-button"
             onclick="loadMorePokemon()"
@@ -54,7 +56,7 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                 alt="close overlay">
             </button>
         </header>
-        <img id="#LoadingSpinnerOverlay"
+        <img id="LoadingSpinnerOverlay"
             class="d-none"
             src="./assets/icons/pokeball-pokemon.svg" 
             alt="Poké Ball"> 
@@ -70,11 +72,11 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
                         style="filter: drop-shadow(-12px 12px 16px var(--${type1})) drop-shadow(12px -12px 16px var(--${type2}))"
                         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeID}.png" 
                         alt="${name}">
-                    <div data-id="overlay-pokemon-types-mobile" class="show-mobile" id="#TypesOverlayMobile${pokeID}"></div>
+                    <div data-id="overlay-pokemon-types-mobile" class="show-mobile" id="TypesOverlayMobile${pokeID}"></div>
                 </div>
                 <div data-id="pokemon-data-2-desktop" class="hide-mobile pokemon-details-container-child">
                     <p data-id="pokemon-attack" class="border-big-reverse"><img class="btn-icon2" src="./assets/icons/attack.png" alt="attack"><br><b>${attack}</b></p>
-                    <div data-id="overlay-pokemon-types" id="#TypesOverlay${pokeID}"></div>
+                    <div data-id="overlay-pokemon-types" id="TypesOverlay${pokeID}"></div>
                     <p data-id="pokemon-defense" class="border-big-reverse"><img class="btn-icon2" src="./assets/icons/defense.png" alt="defense"><br><b>${defense}</b></p>
                 </div>
                 <div data-id="pokemon-data-mobile" class="show-mobile pokemon-details-container-child border-big-reverse">
@@ -88,24 +90,25 @@ function templatePokemonOverlay(pokeID, name, type1, type2, height, weight, hp, 
             <div class="overlay-arrow-container">
                 <button data-id="prev-button"
                     onclick="renderPreviousOrNextPokemonOverlay(${pokeID}, 'previous')"
-                    id="#ButtonPreviousPokemon"
+                    id="ButtonPreviousPokemon"
                     class="btn-icon2 btn-reverse">
                     <img class="inner-btn" src="./assets/icons/arrow-left.png" 
                     alt="previous Pokémon">
                 </button>
                 <div>
                     <h4 class="border-evolution">Evolution Chain</h4>
+                    <h4 class="border-mobile-evolution"> Evo Chain</h4>
                 </div>
                 <button data-id="next-button"
                     onclick="renderPreviousOrNextPokemonOverlay(${pokeID}, 'next')"
-                    id="#ButtonNextPokemon"
+                    id="ButtonNextPokemon"
                     class="btn-icon2">
                     <img class="inner-btn" src="./assets/icons/arrow-right.png" 
                     alt="next Pokémon">
                 </button>
             </div>
             <ul data-id="evolution-chain"
-                id="#EvolutionChain${pokeID}"
+                id="EvolutionChain${pokeID}"
                 class="evolution-chain">
             </ul>
         </section>`

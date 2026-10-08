@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,52 +13,41 @@
     <script src="./scripts/templates.js"></script>
     <script src="./script.js"></script>
 </head>
+
 <body onload="init()">
     <header class="wrapper fixed-header">
-            <div>
-                <img src="./assets/icons/favicon.png" alt="Poké Ball">
-            </div>
-            <div>
-                <label for="#Search">Pokésearch:</label>
-                <input data-id="search-input" 
-                    id="#Search" class="input-search" 
-                    type="search" name="search" 
-                    minlength="3" placeholder="min 3 lts" required
-                    onkeyup="pressEnter(event, 'search')">
-                <button data-id="search-button"
-                    onclick="checkSearchInput()"
-                    type="submit" class="btn-icon2">Find Pokémon 
-                </button>
-            </div>
-    </header>
-     <main data-id="content" id="#PageStart" class="wrapper">
-        <img id="#LoadingSpinner"
-            class="d-none"
-            src="./assets/icons/pokeball-pokemon.svg" 
-            alt="Poké Ball">      
-        <h1>Stefans Pokédex</h1>
-        <ol id="#PokemonList"
-            class="container-pokemon-cards d-none">
-        </ol>
-        <div id="#NoPokemonsFound"></div>
-        <div id="#LoadMoreButton"
-            class="container-load-more-button">
+        <div>
+            <img src="./assets/icons/pokeball-pokemon.svg" alt="Poké Ball">
         </div>
-
-        <dialog data-id="dialog" id="#Dialog" closedby="any">
-            <div data-id="overlay-pokemon"
-                id="#PokemonOverlay"
-                class="pokemon-overlay">
+        <div>
+            <label for="Search">Pokésearch:</label>
+            <input data-id="search-input" id="Search" class="input-search" type="search" name="search" minlength="3"
+                placeholder="min 3 lts" required onkeyup="pressEnter(event, 'search')">
+            <button data-id="search-button" onclick="checkSearchInput()" type="submit" class="btn-icon2">Find Pokémon
+            </button>
+        </div>
+    </header>
+    <main data-id="content" id="PageStart" class="wrapper">
+        <div id="LoadingSpinner">
+            <div class="spinner" class="d-none">
+            </div>
+        </div>
+        <h1>Stefans Pokédex</h1>
+        <ol id="PokemonList" class="container-pokemon-cards d-none">
+        </ol>
+        <div id="NoPokemonsFound"></div>
+        <div id="LoadMoreButton" class="container-load-more-button">
+        </div>
+        <dialog data-id="dialog" id="Dialog" closedby="any">
+            <div data-id="overlay-pokemon" id="PokemonOverlay" class="pokemon-overlay">
             </div>
         </dialog>
-        
     </main>
     <footer class="wrapper last-footer">
-        <a href="##PageStart">
-            <img onclick="showAllLoadedPokemon()"
-                src="./assets/icons/favicon.png" 
-                alt="to the start of the page">
+        <a href="#PageStart">
+            <img onclick="showAllLoadedPokemon()" src="./assets/icons/favicon.png" alt="to the start of the page">
         </a>
     </footer>
 </body>
+
 </html>

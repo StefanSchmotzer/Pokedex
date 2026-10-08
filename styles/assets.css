@@ -1,16 +1,24 @@
 .loading-spinner {
-    display: block;
     position: fixed;
-    top: calc(60px + (100vh - 30vh - 60px) / 2);
-    height: 200px;
-    left: 50%;
-    z-index: 20;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-image: radial-gradient(rgb(217, 255, 0) 30%, transparent 40%, rgb(0, 4, 255) 50%);
+    z-index: 9999;
+}
+
+.spinner{
+    width: 100px;
+    height: 100px;
+    border: 8px dotted rgb(0, 4, 255);
+    border-radius: 75%;
     animation: loadingSpinner 2.5s linear infinite;
 }
 
 @keyframes loadingSpinner {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 input {
@@ -36,13 +44,8 @@ button {
     align-items: center;
     background-color: rgba(241, 49, 49, 0.911);
     border: groove;
-    border-radius:0px 0px 16px 16px;
+    border-radius: 0px 0px 16px 16px;
     cursor: pointer;
-}
-
-.pokemon-card > button {
-   background-color: transparent;
-
 }
 
 .btn-reverse {
@@ -57,9 +60,9 @@ button {
 
 .btn-icon2 {
     font-family: "Luckiest Guy", cursive;
-    color: #ffcb05;
-    -webkit-text-stroke: 1px #003cff;
-    text-shadow: 0px -4px 8px #45a8eb;
+    color: rgb(255, 203, 5);
+    -webkit-text-stroke: 1px rgb(0, 60, 255);
+    text-shadow: 0px -4px 8px rgb(69, 168, 235);
     border-radius: var(--border-radius-small);
     padding: 0 8px;
     height: 36px;
@@ -71,9 +74,9 @@ button {
 
 .btn-load-more {
     font-family: "Luckiest Guy", cursive;
-    color: #ffcb05;
-    -webkit-text-stroke: 1px #003cff;
-    text-shadow: 0px -4px 8px #4a76e6;
+    color: rgb(255, 203, 5);
+    -webkit-text-stroke: 1px rgb(0, 60, 255);
+    text-shadow: 0px -4px 8px rgb(74, 118, 230);
     border-radius: var(--border-radius-small);
     font-size: 16px;
     font-weight: 500;
@@ -87,18 +90,18 @@ button {
 
 a:hover,
 a:focus-visible,
-button:hover, 
+button:hover,
 button:focus-visible,
 .pokemon-card:hover,
 .pokemon-card:focus-visible,
-.pokemon-card > button > img:hover,
-.pokemon-card > button > img:focus-visible {
-    filter: drop-shadow(var(--shadow)); 
+.pokemon-card>button>img:hover,
+.pokemon-card>button>img:focus-visible {
+    filter: drop-shadow(var(--shadow));
 }
 
 a:active,
 button:active,
 .pokemon-card:active,
-.pokemon-card > button > img:active {
-    filter: drop-shadow(var(--shadow-big)); 
+.pokemon-card>button>img:active {
+    filter: drop-shadow(var(--shadow-big));
 }
