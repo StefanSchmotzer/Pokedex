@@ -1,3 +1,12 @@
+const BASE_URL = "https://pokeapi.co/api/v2";
+const MAX_AMOUNT = 1025;
+let loadingAmount = 20;
+const pokemonDataFetched = {};
+const pokemonImageCache = {};
+const renderedPokemons = [];
+let searchedPokemons = [];
+let dialogArray = [];
+
 function startTitleScroll() {
     const fronttitle = " Stefans Pokédex - Have Fun! ";
     let position = 0;
@@ -10,17 +19,6 @@ function startTitleScroll() {
     }, 200);
 }
 
-startTitleScroll();
-
-const BASE_URL = "https://pokeapi.co/api/v2";
-const MAX_AMOUNT = 1025;
-let loadingAmount = 20;
-const pokemonDataFetched = {};
-const pokemonImageCache = {};
-const renderedPokemons = [];
-let searchedPokemons = [];
-let dialogArray = [];
-
 async function init() {
     document.getElementById('LoadingSpinner').classList.add("loading-spinner");
     await getPokemonsData("id", start = 1, end = loadingAmount);
@@ -31,6 +29,7 @@ async function init() {
     renderLoadMoreButton(loadingAmount);
     document.getElementById('LoadingSpinner').classList.remove("loading-spinner");
     await getPokemonsData("id", start = (loadingAmount + 1), end = (MAX_AMOUNT - loadingAmount));
+    startTitleScroll();
 }
 
 async function getPokemonsData(data, start, end) {
